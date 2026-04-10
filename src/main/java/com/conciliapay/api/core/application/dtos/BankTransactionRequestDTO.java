@@ -7,7 +7,9 @@ public record BankTransactionRequestDTO(
         String merchantDocument,
         String bankReference,
         BigDecimal amount,
-        LocalDateTime transactionDate
+        LocalDateTime transactionDate,
+        String transactionType,
+        String description
 ) {
 }
 

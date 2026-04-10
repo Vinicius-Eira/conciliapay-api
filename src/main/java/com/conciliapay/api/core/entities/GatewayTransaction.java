@@ -44,6 +44,18 @@ public class GatewayTransaction {
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
+    @Column(name = "payment_method")
+    private String paymentMethod;
+
+    @Column(name = "installments")
+    private Integer installments = 1;
+
+    @Column(name = "nsu")
+    private String nsu;
+
+    @Column(name = "expected_payment_date")
+    private LocalDateTime expectedPaymentDate;
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
