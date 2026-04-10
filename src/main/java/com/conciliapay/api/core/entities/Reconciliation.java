@@ -29,7 +29,7 @@ public class Reconciliation {
     private GatewayTransaction gatewayTransaction;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "bank_transaction_id", nullable = false, unique = true)
+    @JoinColumn(name = "bank_transaction_id", nullable = false)
     private BankTransaction bankTransaction;
 
     @Enumerated(EnumType.STRING)
