@@ -40,6 +40,11 @@ public class ProcessGatewayTransactionUseCase {
         transaction.setStatus(TransactionStatus.PAID);
         transaction.setTransactionDate(request.transactionDate());
 
+        transaction.setPaymentMethod((request.paymentMethod()));
+        transaction.setInstallments(request.installments() != null ? request.installments() : 1);
+        transaction.setNsu(request.nsu());
+        transaction.setExpectedPaymentDate(request.expectedPaymentDate());
+
         transactionRepository.save(transaction);
     }
 }
