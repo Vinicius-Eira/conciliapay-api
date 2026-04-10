@@ -13,7 +13,7 @@ public record GatewayTransactionRequestDTO(
         String paymentMethod,
         Integer installments,
         String nsu,
-        LocalDate expectedPaymentDate
+        LocalDateTime expectedPaymentDate
 
 ) {
 }
