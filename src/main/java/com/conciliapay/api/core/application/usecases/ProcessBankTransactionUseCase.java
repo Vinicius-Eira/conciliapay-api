@@ -37,6 +37,8 @@ public class ProcessBankTransactionUseCase {
         transaction.setBankReference(request.bankReference());
         transaction.setAmount(request.amount());
         transaction.setTransactionDate(request.transactionDate());
+        transaction.setTransactionType(request.transactionType());
+        transaction.setDescription(request.description());
 
         bankTransactionRepository.save(transaction);
     }
