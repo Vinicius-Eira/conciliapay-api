@@ -43,6 +43,7 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.POST, "/api/v1/gateway-transactions/webhook").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/bank-transactions/statement").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/reconciliations/process").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/reconciliations/**").permitAll()
 
                         .anyRequest().authenticated()
                 )
