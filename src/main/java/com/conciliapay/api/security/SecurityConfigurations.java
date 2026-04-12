@@ -42,6 +42,8 @@ public class SecurityConfigurations {
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/gateway-transactions/webhook").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/bank-transactions/statement").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/v1/reconciliations/process").permitAll()
+
                         .anyRequest().authenticated()
                 )
 

@@ -36,6 +36,9 @@ public class BankTransaction {
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
+    @Column(name = "transaction_type")
+    private String transactionType;
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
