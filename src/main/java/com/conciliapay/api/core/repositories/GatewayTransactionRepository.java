@@ -24,4 +24,6 @@ public interface GatewayTransactionRepository extends JpaRepository<GatewayTrans
 
     @Query("SELECT SUM(g.amount) FROM GatewayTransaction g WHERE g.merchant.document = :document AND g.status = 'PAID'")
     BigDecimal sumPendingLiquidation(@Param("document") String document);
+
+    List<GatewayTransaction> findByMerchantDocumentAndTransactionDateAfter(String document, java.time.LocalDateTime date);
 }
